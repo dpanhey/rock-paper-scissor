@@ -22,11 +22,21 @@ function computerPlay() {
 const playerSelection = "rock";
 const computerSelection = computerPlay();
 
-console.log(playerSelection);
-console.log(computerPlay());
+// console.log(playerSelection);
+// console.log(computerPlay());
 
 // Second function: A function that plays a single round of Rock Paper Scissor
-
 // Third function: A function that returns a string that declares the winner of this round
 // the function declareWinner should return a string like "You Lose! Paper beats Rock!"
 
+function playRound(playerSelection, computerSelection) {
+    if (computerSelection == "rock") {
+        return "Its a draw! Both have Rock!"
+    } else if (computerSelection == "paper") {
+        return "You loose! Paper beats Rock!"
+    } else if (computerSelection == "scissor") {
+        return "You win! Rock beats Scissor!"
+    }
+}
+console.log(computerSelection);
+console.log(playRound(playerSelection, computerSelection));
