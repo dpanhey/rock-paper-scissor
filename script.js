@@ -43,12 +43,24 @@ function game() {
     console.log(computerSelection);
 
     function playRound(playerSelection, computerSelection) {
-        if (computerSelection == "rock") {
+        if (playerSelection == "rock" && computerSelection == "rock") {
             return "Its a draw! Both have Rock!"
-        } else if (computerSelection == "paper") {
+        } else if (playerSelection == "rock" && computerSelection == "paper") {
             return "You loose! Paper beats Rock!"
-        } else if (computerSelection == "scissor") {
+        } else if (playerSelection == "rock" && computerSelection == "scissor") {
             return "You win! Rock beats Scissor!"
+        } else if (playerSelection == "paper" && computerSelection == "paper") {
+            return "Its a draw! Both have Paper!"
+        } else if (playerSelection == "paper" && computerSelection == "scissor") {
+            return "You loose! Scissor beats Paper!"
+        } else if (playerSelection == "paper" && computerSelection == "rock") {
+            return "You win! Paper beats Rock!"
+        } else if (playerSelection == "scissor" && computerSelection == "scissor") {
+            return "Its a draw! Both have Scissor!"
+        } else if (playerSelection == "scissor" && computerSelection == "rock") {
+            return "You loose! Rock beats Scissor!"
+        } else if (playerSelection == "scissor" && computerSelection == "paper") {
+            return "You win! Scissor beats Paper!"
         }
     }
     console.log(playRound(playerSelection, computerSelection))
