@@ -4,14 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissor</title>
+    <title>The Witcher RPS-Game</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <button>Rock</button>
-    <button>Paper</button>
-    <button>Scissor</button>
-
+    <div id="main">
+        <div id="display">
+            <div id="score-screen">
+                <div id="player">
+                    <p>Player: </p>
+                    <p>Computer: </p>
+                </div>
+                <div id="score">
+                    <p>0</p>
+                    <p>0</p>
+                </div>
+            </div>
+            <div id="info-screen">
+                <p>Air beats water.</p>
+                <p>Water beats fire.</p>
+                <p>Fire beats air.</p>
+            </div>
+        </div>
+        <div id="buttons">
+            <button id="aard" class="buttons">Aard - Air</button>
+            <button id="axii" class="buttons">Axii - Water</button>
+            <button id="igni" class="buttons">Igni - Fire</button>
+        </div>
+    </div>
+    
 </body>
 </html>
