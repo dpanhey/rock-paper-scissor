@@ -1,6 +1,7 @@
 "use strict";
 
 const buttons = document.querySelectorAll("#buttons button");
+const buttonParent = document.querySelector("div#buttons");
 const infoText = document.querySelector("div#info-screen p")
 const playerScoreInfo = document.querySelector("div#score p:first-child")
 const computerScoreInfo = document.querySelector("div#score p:last-child")
@@ -11,9 +12,13 @@ let gameOver = 0;
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        playRound(button.id, computerChoice())
-        checkWinCondition();
-        resetGame();
+        if (button.id === "reset-button") {
+            infoText.textContent = "Welcome Back! Show me you're worthy!"
+        } else {
+            playRound(button.id, computerChoice())
+            checkWinCondition();
+            resetGame();
+        }
     });
 });
 
@@ -56,16 +61,29 @@ function checkWinCondition () {
 
 function resetGame () {
     if (gameOver) {
-        const button = document.querySelectorAll("button");
-        const buttonParent = document.querySelector("div#buttons");
-        button.forEach((button) => {
-            button.parentNode.removeChild(button);
+        const hideButton = document.querySelectorAll("div#buttons button:nth-child(odd)");
+        const resetButton = document.querySelector("div#buttons button:nth-child(2)")
+        hideButton.forEach((button) => {
+            button.setAttribute("class", "hide");
         })
-        let createButton = document.createElement("button");
-        createButton.setAttribute("class", "buttons");
-        createButton.setAttribute("id", "newGame")
-        createButton.textContent = "Let's play again!";
-        createButton = buttonParent.appendChild(createButton);
-        console.log(buttons);
+        resetButton.setAttribute("onclick", "newGame()")
+        resetButton.setAttribute("id", "reset-button")
+        resetButton.textContent = "Let's play again!";
     }
 };
+
+function newGame () {
+    playerScore = 0;
+    computerScore = 0;
+    gameOver = 0;
+    playerScoreInfo.textContent = playerScore;
+    computerScoreInfo.textContent = computerScore;
+    const showButton = document.querySelectorAll("div#buttons button:nth-child(odd)");
+    const resetButton = document.querySelector("div#buttons button:nth-child(2)")
+    showButton.forEach((button) => {
+        button.setAttribute("class", "buttons");
+    })
+    resetButton.removeAttribute("onclick");
+    resetButton.setAttribute("id", "axii")
+    resetButton.textContent = "Axii - Water";
+}
