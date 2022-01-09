@@ -8,4 +8,8 @@ The RPS-Game will have 3 buttons, one each for rock, paper and scissor.
 Also there will be a display, which will show the score for each player in one corner (Player and Computer)
 and also show if you won the actual round and the game in the middle of the screen.
 
-Ill try to add a nice theme to the whole game later, so that it isnt lame.
+Development Stage 3:
+Ill try to add a nice theme to the whole game, so that it isnt lame.
+
+Progress:
+Look at my progress here: https://dpanhey.github.io/rock-paper-scissor/
